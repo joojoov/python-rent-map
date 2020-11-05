@@ -38,13 +38,12 @@ csv_file = open('rent.csv', 'w', -1, "UTF-8")
 csv_write = csv.writer(csv_file, delimiter=',')
 
 def get_price_img(n, image_url):
-    image_path = '/home/haru-ubuntu1804/文档/house_rent/img_dir/'  # 图片保存路径
+    image_path = './img_dir/'  # 图片保存路径
     image_name = '{}{}'.format(image_path, str(n))
     urllib.request.urlretrieve(url=image_url, filename=image_name)
     return image_name
 
 def pic_turn_white_ocr(image_name):
-    """ 将png的透明背景色变成白色 """
     im = Image.open(image_name)
     x, y = im.size
 
